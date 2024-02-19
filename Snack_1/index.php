@@ -29,3 +29,22 @@ $matches = [
 ];
 
 var_dump($matches);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack 1</title>
+</head>
+<body>
+    <ul>
+        <!-- Generate dinamic matches --> 
+        <?php for ($i = 0; $i < count($matches); $i++) : ?>
+            <li><?= $matches[$i]['home_team'] . ' - ' . $matches[$i]['away_team'] . ' | ' . $matches[$i]['home_score'] . ' - ' . $matches[$i]['away_score']; ?></li>
+        <?php endfor; ?>
+    </ul>
+</body>
+</html>
