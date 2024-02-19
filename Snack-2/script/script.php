@@ -9,11 +9,12 @@ $user_email = $_GET['email'];
 // User age
 $user_age = $_GET['age'];
 
+// Validation
+$message = 'Accesso negato';
+
 if (strlen($username) > 3 && str_contains($user_email, '.') && str_contains($user_email, '@') && is_numeric($user_age)) {
     $message = 'Accesso riuscito';
-} else {
-    $message = 'Accesso negato';
-}
+};
 
 ?>
 
