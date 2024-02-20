@@ -42,8 +42,10 @@ var_dump($matches);
 <body>
     <ul>
         <!-- Generate dinamic matches --> 
-        <?php for ($i = 0; $i < count($matches); $i++) : ?>
-            <li><?= $matches[$i]['home_team'] . ' - ' . $matches[$i]['away_team'] . ' | ' . $matches[$i]['home_score'] . ' - ' . $matches[$i]['away_score']; ?></li>
+        <?php for ($i = 0; $i < count($matches); $i++) : 
+            $match = $matches[$i]   
+        ?>
+            <li><?= "{$match['home_team']} - {$match['away_team']} | {$match['home_score']} - {$match['away_score']}" ?></li>
         <?php endfor; ?>
     </ul>
 </body>
