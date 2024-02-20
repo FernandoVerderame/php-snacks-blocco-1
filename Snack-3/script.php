@@ -18,7 +18,7 @@ $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo
     <?php
     $pieces = explode('.', $text);
     foreach ($pieces as $piece) : ?>
-        <p><?= $piece ?></p>
+        <p><?= $piece ?>.</p>
     <?php endforeach ?>
 
 </body>

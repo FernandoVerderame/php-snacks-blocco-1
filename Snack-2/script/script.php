@@ -1,20 +1,22 @@
 <?php
 
 // Username
-$username = $_GET['firstname'];
+$username = $_GET['firstname'] ?? '';
 
 // User email
-$user_email = $_GET['email'];
+$user_email = $_GET['email'] ?? '';
 
 // User age
-$user_age = $_GET['age'];
+$user_age = $_GET['age'] ?? '';
 
 // Validation
-$message = 'Accesso negato';
+$is_name_valid = mb_strlen(trim($username)) > 3;
+$is_email_valid = str_contains($user_email, '@') && str_contains($user_email, '.');
+$is_age_valid = is_numeric($user_age) && $user_age > 0;
 
-if (strlen($username) > 3 && str_contains($user_email, '.') && str_contains($user_email, '@') && is_numeric($user_age)) {
-    $message = 'Accesso riuscito';
-};
+$is_form_invalid = !$is_name_valid || !$is_email_valid || !$is_age_valid;
+
+$message = $is_form_invalid ? 'Accesso Negato' : 'Accesso Riuscito';
 
 ?>
 
